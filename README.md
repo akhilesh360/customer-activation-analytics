@@ -1,20 +1,16 @@
 # Warehouse-Native Composable CDP + AI Decisioning Lite
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![dbt](https://img.shields.io/badge/dbt-1.0+-orange.svg)](https://www.getdbt.com/)
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-
 A production-ready demonstration of a modern, warehouse-native Customer Data Platform (CDP) with AI-powered decisioning capabilities. This project showcases how to build composable customer activation pipelines using your data warehouse as the foundation.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 This system demonstrates a complete customer lifecycle management platform built on modern data stack principles:
 
-- **🏭 Data Warehouse Foundation**: DuckDB-powered analytics with dbt transformations
-- **📊 Customer Intelligence**: 360-degree customer views, retention cohorts, and ML-driven segment scoring
-- **🤖 AI Decisioning Engine**: Guardrailed next-best-action recommendations with business rule enforcement
-- **🚀 Reverse ETL Activation**: Automated customer journey orchestration to downstream systems
-- **📈 Self-Service Analytics**: BI-ready marts for stakeholder enablement
+- **Data Warehouse Foundation**: DuckDB-powered analytics with dbt transformations
+- **Customer Intelligence**: 360-degree customer views, retention cohorts, and ML-driven segment scoring
+- **AI Decisioning Engine**: Guardrailed next-best-action recommendations with business rule enforcement
+- **Reverse ETL Activation**: Automated customer journey orchestration to downstream systems
+- **Self-Service Analytics**: BI-ready marts for stakeholder enablement
 
 ### Key Features
 
@@ -26,7 +22,7 @@ This system demonstrates a complete customer lifecycle management platform built
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -92,34 +88,34 @@ make activate SEGMENT=high_value_lapse_risk DRY_RUN=1
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 customer-activation-analytics/
-├── 📊 bi/                          # Business Intelligence exports
+├── bi/                          # Business Intelligence exports
 │   ├── dim_customer.csv
 │   ├── mart_marketing__customer_360.csv
 │   └── mart_marketing__segment_scores.csv
-├── 🏭 warehouse/dbt/               # Data warehouse & transformations
+├── warehouse/dbt/               # Data warehouse & transformations
 │   ├── models/
 │   │   ├── staging/                # Raw data staging models
 │   │   └── marts/marketing/        # Customer analytics marts
 │   ├── seeds/                      # Sample datasets
 │   └── macros/                     # Reusable dbt macros
-├── 🤖 decisioning/                 # AI decisioning engine
+├── decisioning/                 # AI decisioning engine
 │   ├── nbs_rules.py               # Next-best-action logic
 │   └── nbs_llm.py                 # LLM-powered recommendations
-├── 🚀 activation/                  # Reverse ETL & activation
+├── activation/                  # Reverse ETL & activation
 │   ├── simulate_reverse_etl.py    # Main activation orchestrator
 │   └── destinations/              # Integration stubs
-├── 🔄 orchestration/              # Workflow management
+├── orchestration/              # Workflow management
 │   └── airflow_dag.py            # Production DAG definitions
-└── 📤 outbox/                     # Activation outputs
+└── outbox/                     # Activation outputs
 ```
 
 ---
 
-## 🎯 Available Customer Segments
+## Available Customer Segments
 
 | Segment | Description | Activation Strategy |
 |---------|-------------|-------------------|
@@ -130,7 +126,7 @@ customer-activation-analytics/
 
 ---
 
-## 🛠️ Available Commands
+## Available Commands
 
 All project operations are managed through the `Makefile`. See below for available commands:
 
@@ -163,7 +159,7 @@ GOAL=<goal> DISCOUNT_CAP=<cap> SUPPRESS_HOURS=<hours> make activate SEGMENT=<seg
 
 ---
 
-## 🤖 AI Decisioning Engine
+## AI Decisioning Engine
 
 The decisioning engine provides guardrailed, next-best-action recommendations:
 
@@ -190,7 +186,7 @@ action = next_best_action(
 
 ---
 
-## 🔌 Integration Points
+## Integration Points
 
 ### Supported Destinations
 - **HubSpot**: Contact updates and email campaigns
@@ -204,7 +200,7 @@ action = next_best_action(
 
 ---
 
-## 📈 Business Intelligence
+## Business Intelligence
 
 The platform generates ready-to-use BI assets:
 
@@ -217,7 +213,7 @@ All BI assets are automatically exported to the `/bi` directory for consumption 
 
 ---
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Airflow Integration
 The project includes production-ready Airflow DAGs for automated execution:
@@ -243,7 +239,7 @@ customer_activation_dag = DAG(
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This project demonstrates modern CDP architecture patterns and is designed for educational and prototyping purposes. Contributions welcome!
 
@@ -255,13 +251,13 @@ This project demonstrates modern CDP architecture patterns and is designed for e
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙋 Support
+## Support
 
 For questions about implementation or extending this platform:
 
