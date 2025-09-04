@@ -1,0 +1,6 @@
+event_id,customer_id,event_type,event_ts,session_id
+1001,1,page_view,2025-08-06 09:05:00,s1
+1002,1,add_to_cart,2025-08-06 09:07:00,s1
+1003,2,page_view,2025-07-30 13:00:00,s2
+1004,4,page_view,2025-08-01 12:00:00,s3
+1005,5,purchase,2025-08-05 10:02:00,s4

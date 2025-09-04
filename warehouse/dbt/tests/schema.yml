@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: email
+        tests: [not_null]
+
+  - name: dim_customer
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests: [not_null, unique]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['paid','refunded']
+
+  - name: mart_marketing__segment_scores
+    columns:
+      - name: segment
+        tests:
+          - accepted_values:
+              values: ['high_value_lapse_risk','new_users_first_week_intent','churn_rescue_nps','unclassified']

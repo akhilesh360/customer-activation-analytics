@@ -1,0 +1,7 @@
+hightouch_analytics_demo:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: warehouse/dbt/duckdb/hightouch.duckdb
+      schema: main
