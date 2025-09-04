@@ -16,7 +16,5 @@ serve-docs:
 	cd $(DBT_DIR) && dbt docs serve
 
 activate:
-	python activation/simulate_reverse_etl.py --segment $(SEGMENT) --dry-run $(DRY_RUN)
-
-demo:
+	python -m activation.simulate_reverse_etl --segment $(SEGMENT) --dry-run $(DRY_RUN)
 	make build && make docs && make activate SEGMENT=all DRY_RUN=1

@@ -3,5 +3,5 @@ hightouch_analytics_demo:
   outputs:
     dev:
       type: duckdb
-      path: warehouse/dbt/duckdb/hightouch.duckdb
+      path: duckdb/hightouch.duckdb   # or an absolute path
       schema: main

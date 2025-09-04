@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.DS_Store
+warehouse/dbt/duckdb/
+target/
+outbox/
+bi/
