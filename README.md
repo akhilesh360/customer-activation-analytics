@@ -2,6 +2,8 @@
 
 A production-ready demonstration of a modern, warehouse-native Customer Data Platform (CDP) with AI-powered decisioning capabilities. This project showcases how to build composable customer activation pipelines using your data warehouse as the foundation.
 
+<img width="4249" height="517" alt="Flowcharts (1)" src="https://github.com/user-attachments/assets/e83b2e72-7c28-4ee4-b145-5a12b72b1e8c" />
+
 ## Architecture Overview
 
 This system demonstrates a complete customer lifecycle management platform built on modern data stack principles:
