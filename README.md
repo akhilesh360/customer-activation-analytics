@@ -2,6 +2,8 @@
 
 An enterprise-grade customer activation platform that combines the modern data stack, AI-powered analysis, and CRM integration to identify at-risk customers and automate retention campaigns.
 
+Live Demo - https://customer-activation-analytics-doswappppyzzduxxhwrd8gux.streamlit.app/
+
 ---
 
 ## Table of Contents
