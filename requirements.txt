@@ -17,6 +17,10 @@ PyYAML==6.0.2
 streamlit>=1.34,<2
 plotly>=5.22,<6
 
+# API & integrations
+openai>=1.14.0
+python-dotenv>=1.0.0
+
 # build helpers
 pip>=24.2
 setuptools>=69
