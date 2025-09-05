@@ -46,6 +46,13 @@ An enterprise-grade customer activation platform that combines the modern data s
 
 ---
 
+## Demo Workflow
+
+1. **Architecture Overview**: `python architecture_overview.py`
+2. **Validate Integrations**: `python validate_integrations.py`
+3. **Launch Dashboard**: `streamlit run dashboard.py`
+4. **Execute Pipeline**: `python run_activation_pipeline.py`
+
 ## Quick Start
 
 ### Option 1: GitHub Codespaces (Recommended for Demos)
@@ -174,15 +181,6 @@ SALESFORCE_SECURITY_TOKEN=your_security_token
 USE_LLM_SCORING=true
 DEBUG=false
 ```
-
----
-
-## Demo Workflow
-
-1. **Architecture Overview**: `python architecture_overview.py`
-2. **Validate Integrations**: `python validate_integrations.py`
-3. **Launch Dashboard**: `streamlit run dashboard.py`
-4. **Execute Pipeline**: `python run_activation_pipeline.py`
 
 ---
 
