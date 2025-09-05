@@ -6,6 +6,10 @@ An enterprise-grade customer activation platform that combines modern data stack
 
 ## Architecture
 
+### Dashboard
+<img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 47 47 PM" src="https://github.com/user-attachments/assets/1059414a-4d24-4eec-abde-026ff2703840" />
+<img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 47 57 PM" src="https://github.com/user-attachments/assets/aa5b3157-3368-4c00-835f-a97c66ec7e79" />
+
 **Modern Data Stack**: dbt + DuckDB + Python  
 **AI Integration**: OpenAI GPT-4 for customer risk scoring  
 **CRM Integration**: Live Salesforce API  
@@ -32,19 +36,25 @@ streamlit run dashboard.py
 ## Platform Components
 
 ### Data Pipeline
+<img width="1072" height="240" alt="Screenshot 2025-09-04 at 10 44 19 PM" src="https://github.com/user-attachments/assets/2103f324-c4ab-44d2-85f5-a410f6dcec74" />
 - **6 dbt models** with comprehensive data quality testing
+<img width="1109" height="978" alt="Screenshot 2025-09-04 at 10 45 52 PM" src="https://github.com/user-attachments/assets/12c492e1-c2ea-49b9-911b-a5c56b18a335" />
 - **Customer 360°** view with behavioral analytics
 - **Real-time segmentation** and risk scoring
 
 ### AI Integration
 - **GPT-4 powered** customer analysis
+  <img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 48 47 PM" src="https://github.com/user-attachments/assets/3f43f08a-b163-4940-9722-2bc73bc8c34a" />
 - **Personalized messaging** generation
+  <img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 48 56 PM" src="https://github.com/user-attachments/assets/e2998473-35ed-4f03-add6-3dc781e7c26b" />
 - **Risk assessment** automation
 
 ### CRM Integration
 - **Live Salesforce API** connectivity
 - **Automated lead creation** and task assignment
 - **Opportunity pipeline** management
+
+
 
 ## Use Cases
 
