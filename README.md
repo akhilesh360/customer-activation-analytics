@@ -1,6 +1,7 @@
 # Customer Activation Analytics Platform
 
 An enterprise-grade customer activation platform that combines modern data stack, AI-powered analysis, and CRM integration to identify at-risk customers and automate retention campaigns.
+<img width="4249" height="517" alt="Flowcharts (1)" src="https://github.com/user-attachments/assets/ce92afb0-e382-4a9c-8be0-43835c0d147f" />
 
 ## Architecture
 
