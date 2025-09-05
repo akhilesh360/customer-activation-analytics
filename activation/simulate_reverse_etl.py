@@ -94,7 +94,13 @@ def export_and_send(records, seg, dry_run=True):
         return
 
     use_llm = os.getenv('USE_LLM_SCORING', 'true').lower() == 'true'
-    openai_key = os.getenv('OPENAI_API_KEY')
+    # Get API key from environment variables
+    openai_key = os.getenv('OPENAI_API_KEY') or os.getenv('OPENAI_KEY')
+    
+    # Make sure it's not a placeholder
+    if openai_key and (openai_key.startswith('PASTE_') or openai_key == 'your-openai-api-key-here'):
+        print("[activation] API key appears to be a placeholder, not using LLM features")
+        openai_key = None
     
     if use_llm and openai_key:
         print(f"[activation] Using OpenAI LLM for enhanced customer analysis")
