@@ -16,7 +16,8 @@
 > **Ingest → Analyze → Segment → Automate → Retain**
 
 
-(https://github.com/user-attachments/assets/2103f324-c4ab-44d2-85f5-a410f6dcec74)
+<img width="1072" height="240" alt="image" src="https://github.com/user-attachments/assets/82cc22a4-b909-4b18-99d8-32d00bd5f74c" />
+
 Activate and retain customers by combining AI-powered analytics, modern data stack, and live CRM workflows. Identify at-risk customers, automate personalized outreach, and recover revenue with actionable insights.
 
 ## Dashboard Preview
