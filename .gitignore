@@ -5,3 +5,4 @@ warehouse/dbt/duckdb/
 target/
 outbox/
 bi/
+.env
