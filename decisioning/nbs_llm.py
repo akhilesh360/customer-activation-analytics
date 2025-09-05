@@ -14,9 +14,34 @@ except ImportError:
 # Initialize OpenAI client
 def get_openai_client():
     """Get OpenAI client if API key is available"""
-    api_key = os.getenv('OPENAI_API_KEY')
-    if api_key and api_key != 'your-openai-api-key-here':
-        return OpenAI(api_key=api_key)
+    # Try multiple sources for the API key, in order of preference:
+    # 1. Environment variables (OPENAI_API_KEY or OPENAI_KEY)
+    # 2. Direct .env file values (bypassing environment override)
+    
+    # Check environment variables first
+    api_key = os.getenv('OPENAI_API_KEY') or os.getenv('OPENAI_KEY')
+    
+    # Debug - Check what API key we're getting
+    if api_key:
+        masked_key = f"{api_key[:5]}...{api_key[-4:]}" if len(api_key) > 10 else "***"
+        print(f"[llm] Found API key starting with {masked_key}")
+    else:
+        print("[llm] No valid API key found")
+        return None
+        
+    # Make sure it's not a placeholder
+    if api_key and not (api_key.startswith('PASTE_') or api_key == 'your-openai-api-key-here'):
+        try:
+            client = OpenAI(api_key=api_key)
+            # Test the client with a minimal call
+            print(f"[llm] Testing OpenAI API connection...")
+            models = client.models.list()
+            print(f"[llm] Successfully connected to OpenAI API")
+            return client
+        except Exception as e:
+            print(f"[llm] Error initializing OpenAI client: {e}")
+    else:
+        print("[llm] API key appears to be a placeholder or is missing")
     return None
 
 def llm_score(context: Dict) -> float:
