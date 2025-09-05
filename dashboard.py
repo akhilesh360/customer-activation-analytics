@@ -14,12 +14,26 @@ import duckdb
 from datetime import datetime, timedelta
 import os
 
-# Load environment variables from .env file
+# Load environment variables from multiple sources
 try:
+    # First try to load from Streamlit secrets if available
+    # This is used in production/cloud deployment
+    if hasattr(st, 'secrets'):
+        # Copy secrets to environment variables for subprocess
+        if 'openai' in st.secrets:
+            os.environ['OPENAI_API_KEY'] = st.secrets.openai.api_key
+        
+        if 'salesforce' in st.secrets:
+            os.environ['SALESFORCE_USERNAME'] = st.secrets.salesforce.username
+            os.environ['SALESFORCE_PASSWORD'] = st.secrets.salesforce.password
+            os.environ['SALESFORCE_SECURITY_TOKEN'] = st.secrets.salesforce.security_token
+            os.environ['SALESFORCE_INSTANCE_URL'] = st.secrets.salesforce.instance_url
+    
+    # Then try .env file (mainly for local development)
     from dotenv import load_dotenv
     load_dotenv()
 except ImportError:
-    pass  # dotenv not available, use system environment variables
+    pass  # dotenv not available, will use system environment variables
 
 # Page configuration
 st.set_page_config(
@@ -364,10 +378,31 @@ def main():
         st.header("Customer Activation Engine")
         st.markdown("### AI-Powered Customer Engagement & Activation")
         
+        # Check API keys and environment configuration
+        api_status_col1, api_status_col2 = st.columns([1, 1])
+        
+        with api_status_col1:
+            if openai_available:
+                st.success("✅ OpenAI: Connected and ready (GPT-4)")
+            else:
+                st.error("❌ OpenAI: Not configured (add OPENAI_API_KEY in Streamlit secrets or .env)")
+        
+        with api_status_col2:
+            # Check if Salesforce credentials are available
+            sf_username = os.environ.get('SALESFORCE_USERNAME')
+            sf_password = os.environ.get('SALESFORCE_PASSWORD')
+            sf_token = os.environ.get('SALESFORCE_SECURITY_TOKEN')
+            
+            if sf_username and sf_password and sf_token:
+                st.success("✅ Salesforce: Credentials found")
+            else:
+                st.error("❌ Salesforce: Missing credentials (add in Streamlit secrets)")
+                
+        # Mode information
         if openai_available:
-            st.success("LLM Enhanced Mode: AI risk scoring and personalized messaging enabled (GPT-4)")
+            st.info("LLM Enhanced Mode: AI risk scoring and personalized messaging enabled (GPT-4)")
         else:
-            st.info("Standard Mode: Rule-based activation (add OPENAI_API_KEY for AI enhancement)")
+            st.warning("Standard Mode: Rule-based activation only (AI features disabled)")
         
         col1, col2 = st.columns([2, 1])
         
@@ -388,29 +423,47 @@ def main():
                     import subprocess
                     import sys
                     
+                    # Create a placeholder for logs
+                    log_placeholder = st.empty()
+                    
                     try:
-                        # Run the activation pipeline
+                        # Run the activation pipeline with safeguards
+                        log_placeholder.info("Starting activation pipeline...")
+                        
+                        # Set environment variables from .env for subprocess
+                        env = os.environ.copy()
+                        
+                        # Run with subprocess but ensure it doesn't crash the app
                         result = subprocess.run([
                             sys.executable, "-m", "activation.simulate_reverse_etl",
                             "--segment", selected_segment,
-                            "--dry-run", "1"
-                        ], capture_output=True, text=True, cwd=os.getcwd())
+                            "--dry-run", "0"  # Actually send to Salesforce
+                        ], capture_output=True, text=True, cwd=os.getcwd(), env=env, timeout=60)
                         
                         if result.returncode == 0:
-                            st.success("Activation completed successfully!")
+                            log_placeholder.success("✅ Activation completed successfully!")
                             
                             # Display the output
                             if result.stdout:
                                 st.text_area("Activation Log", result.stdout, height=200)
                             
-                            # Reload and display results
-                            if os.path.exists("outbox/all_payload.csv"):
-                                st.rerun()
+                            # Show success message that persists
+                            st.success(f"Successfully activated {selected_segment} segment!")
                         else:
-                            st.error(f"Activation failed: {result.stderr}")
+                            error_msg = result.stderr or "Unknown error occurred"
+                            log_placeholder.error(f"⚠️ Activation encountered issues: {error_msg}")
+                            st.error(f"Activation process had errors - check the log below")
+                            st.text_area("Error Log", error_msg, height=200)
                             
+                    except subprocess.TimeoutExpired:
+                        log_placeholder.warning("⏱️ Activation process took too long and was stopped")
+                        st.warning("The process was taking too long and was stopped. This could be due to API rate limits or network issues.")
                     except Exception as e:
-                        st.error(f"Error running activation: {e}")
+                        log_placeholder.error(f"❌ Error: {str(e)}")
+                        st.error(f"Error running activation: {str(e)}")
+                        
+                    # Always show something useful regardless of errors
+                    st.info("You can also run activations from the command line with: `python -m activation.simulate_reverse_etl --segment high_value_lapse_risk`")
         
         with col2:
             st.subheader("Activation Insights")
