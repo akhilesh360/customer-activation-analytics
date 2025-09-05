@@ -7,13 +7,17 @@ dbt-extractor==0.6.0
 dbt-semantic-interfaces==0.7.4
 dbt-snowflake==1.9.4
 
-# core dependencies
+# core deps
 duckdb==1.1.3
 pandas==2.2.3
 pandasql==0.7.3
 PyYAML==6.0.2
 
-# build helpers (ensure smooth install on Streamlit Cloud)
+# app/UI libs
+streamlit>=1.34,<2
+plotly>=5.22,<6
+
+# build helpers
 pip>=24.2
 setuptools>=69
 wheel
