@@ -1,20 +1,50 @@
 # Customer Activation Analytics Platform
 
-An enterprise-grade customer activation platform that combines modern data stack, AI-powered analysis, and CRM integration to identify at-risk customers and automate retention campaigns.
+An enterprise-grade customer activation platform that combines the modern data stack, AI-powered analysis, and CRM integration to identify at-risk customers and automate retention campaigns.
 
-<img width="4249" height="517" alt="Flowcharts (1)" src="https://github.com/user-attachments/assets/826c12e6-19df-43ce-a087-6034a62f4184" />
+---
 
-## Architecture
+## Table of Contents
+1. [Architecture Overview](#architecture-overview)
+2. [Dashboard](#dashboard)
+3. [Quick Start](#quick-start)
+4. [Platform Components](#platform-components)
+5. [Use Cases](#use-cases)
+6. [Key Scripts](#key-scripts)
+7. [Business Impact](#business-impact)
+8. [Technical Stack](#technical-stack)
+9. [Production Deployment](#production-deployment)
+10. [Configuration](#configuration)
+11. [Demo Workflow](#demo-workflow)
+12. [Contributing](#contributing)
+13. [License](#license)
 
-### Dashboard
-<img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 47 47 PM" src="https://github.com/user-attachments/assets/1059414a-4d24-4eec-abde-026ff2703840" />
-<img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 47 57 PM" src="https://github.com/user-attachments/assets/aa5b3157-3368-4c00-835f-a97c66ec7e79" />
+---
 
-**Modern Data Stack**: dbt + DuckDB + Python  
-**AI Integration**: OpenAI GPT-4 for customer risk scoring  
-**CRM Integration**: Live Salesforce API  
-**Orchestration**: Apache Airflow  
-**Analytics**: Streamlit dashboard  
+## Architecture Overview
+
+![Architecture Flowchart: High-level overview of the customer activation analytics platform.](https://github.com/user-attachments/assets/826c12e6-19df-43ce-a087-6034a62f4184)
+*Figure: System architecture and integration flow.*
+
+---
+
+## Dashboard
+
+![Dashboard Screenshot: Main analytics dashboard interface.](https://github.com/user-attachments/assets/1059414a-4d24-4eec-abde-026ff2703840)
+*Figure: Dashboard view for customer analytics.*
+
+![Dashboard Screenshot: Alternate dashboard layout.](https://github.com/user-attachments/assets/aa5b3157-3368-4c00-835f-a97c66ec7e79)
+*Figure: Alternate dashboard view.*
+
+---
+
+**Modern Data Stack:** dbt + DuckDB + Python  
+**AI Integration:** OpenAI GPT-4 for customer risk scoring  
+**CRM Integration:** Live Salesforce API  
+**Orchestration:** Apache Airflow  
+**Analytics:** Streamlit dashboard  
+
+---
 
 ## Quick Start
 
@@ -25,6 +55,7 @@ An enterprise-grade customer activation platform that combines modern data stack
 4. Access the dashboard at the forwarded port
 
 ### Option 2: Local Development
+
 ```bash
 git clone https://github.com/akhilesh360/customer-activation-analytics.git
 cd customer-activation-analytics
@@ -33,28 +64,44 @@ make build
 streamlit run dashboard.py
 ```
 
+---
+
 ## Platform Components
 
 ### Data Pipeline
-<img width="1072" height="240" alt="Screenshot 2025-09-04 at 10 44 19 PM" src="https://github.com/user-attachments/assets/2103f324-c4ab-44d2-85f5-a410f6dcec74" />
+
+![Data Pipeline Diagram: dbt models and customer analytics flow.](https://github.com/user-attachments/assets/2103f324-c4ab-44d2-85f5-a410f6dcec74)
+*Figure: Data pipeline overview.*
+
 - **6 dbt models** with comprehensive data quality testing
-<img width="1109" height="978" alt="Screenshot 2025-09-04 at 10 45 52 PM" src="https://github.com/user-attachments/assets/12c492e1-c2ea-49b9-911b-a5c56b18a335" />
+
+![Customer 360 Screenshot: Behavioral analytics view for a customer.](https://github.com/user-attachments/assets/12c492e1-c2ea-49b9-911b-a5c56b18a335)
+*Figure: Customer 360° view.*
+
 - **Customer 360°** view with behavioral analytics
 - **Real-time segmentation** and risk scoring
 
 ### AI Integration
+
 - **GPT-4 powered** customer analysis
-  <img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 48 47 PM" src="https://github.com/user-attachments/assets/3f43f08a-b163-4940-9722-2bc73bc8c34a" />
+
+![AI Analysis Screenshot: Customer risk scoring and insights.](https://github.com/user-attachments/assets/3f43f08a-b163-4940-9722-2bc73bc8c34a)
+*Figure: AI-powered risk scoring.*
+
 - **Personalized messaging** generation
-  <img width="1408" height="949" alt="Screenshot 2025-09-04 at 10 48 56 PM" src="https://github.com/user-attachments/assets/e2998473-35ed-4f03-add6-3dc781e7c26b" />
+
+![Personalized Messaging Screenshot: AI-generated customer outreach messaging.](https://github.com/user-attachments/assets/e2998473-35ed-4f03-add6-3dc781e7c26b)
+*Figure: Personalized AI messaging.*
+
 - **Risk assessment** automation
 
 ### CRM Integration
+
 - **Live Salesforce API** connectivity
 - **Automated lead creation** and task assignment
 - **Opportunity pipeline** management
 
-
+---
 
 ## Use Cases
 
@@ -63,14 +110,18 @@ streamlit run dashboard.py
 3. **Personalized Campaigns**: AI-generated messaging for customer outreach
 4. **Revenue Recovery**: Targeted activation of lapsed customers
 
+---
+
 ## Key Scripts
 
-| Script | Purpose |
-|--------|---------|
-| `architecture_overview.py` | Platform architecture and component overview |
+| Script                   | Purpose                                        |
+|--------------------------|------------------------------------------------|
+| `architecture_overview.py` | Platform architecture and component overview  |
 | `run_activation_pipeline.py` | Execute end-to-end customer activation workflow |
-| `validate_integrations.py` | Test CRM and AI API connectivity |
-| `dashboard.py` | Analytics dashboard and real-time monitoring |
+| `validate_integrations.py` | Test CRM and AI API connectivity              |
+| `dashboard.py`           | Analytics dashboard and real-time monitoring   |
+
+---
 
 ## Business Impact
 
@@ -79,17 +130,21 @@ streamlit run dashboard.py
 - **Personalized** retention campaigns at scale
 - **Measurable** revenue activation and recovery
 
+---
+
 ## Technical Stack
 
-| Component | Technology |
-|-----------|------------|
-| **Data Warehouse** | DuckDB |
-| **Data Transformation** | dbt 1.9.4 |
-| **AI/ML** | OpenAI GPT-4 |
-| **CRM** | Salesforce API |
-| **Orchestration** | Apache Airflow |
-| **Frontend** | Streamlit |
-| **Language** | Python 3.10+ |
+| Component             | Technology         |
+|-----------------------|-------------------|
+| **Data Warehouse**    | DuckDB            |
+| **Data Transformation** | dbt 1.9.4       |
+| **AI/ML**             | OpenAI GPT-4      |
+| **CRM**               | Salesforce API    |
+| **Orchestration**     | Apache Airflow    |
+| **Frontend**          | Streamlit         |
+| **Language**          | Python 3.10+      |
+
+---
 
 ## Production Deployment
 
@@ -100,9 +155,12 @@ The platform includes production-ready features:
 - **Environment-based configuration**
 - **API rate limiting** and authentication
 
+---
+
 ## Configuration
 
 Create a `.env` file with your API credentials:
+
 ```bash
 # OpenAI API Key
 OPENAI_API_KEY=your_openai_key_here
@@ -117,6 +175,8 @@ USE_LLM_SCORING=true
 DEBUG=false
 ```
 
+---
+
 ## Demo Workflow
 
 1. **Architecture Overview**: `python architecture_overview.py`
@@ -124,9 +184,13 @@ DEBUG=false
 3. **Launch Dashboard**: `streamlit run dashboard.py`
 4. **Execute Pipeline**: `python run_activation_pipeline.py`
 
+---
+
 ## Contributing
 
 This is a production demonstration platform. For enterprise deployment or customization inquiries, please contact the maintainer.
+
+---
 
 ## License
 
