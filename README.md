@@ -11,7 +11,7 @@ This repository provides a comprehensive, production-style pipeline for predicti
 - **Fairness analysis:** Performance across demographic and regional groups
 - **Consulting-ready structure:** Modular code, clear documentation, reproducible environment
 
-## Repository Structure
+
 
 ```
 predictive-heatpump-adoption/
