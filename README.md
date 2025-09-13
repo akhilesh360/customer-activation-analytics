@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# predictive-heatpump-adoption
-=======
 # Predictive Heat Pump Adoption
 
 ## Project Overview
@@ -166,4 +163,3 @@ This approach ensures that improvements in predictive power are meaningful and t
 ---
 
 For further details, see the notebooks and documentation in the `docs/` folder. If you have questions or want to collaborate, please contact the repository owner via GitHub.
->>>>>>> ab4b1c2 (Initial commit: predictive heat pump adoption project)
