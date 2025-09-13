@@ -1,127 +1,143 @@
-
-# Customer Activation Analytics Platform
-
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B.svg)](https://customer-activation-analytics-doswappppyzzduxxhwrd8gux.streamlit.app/)
-
-## DEMO - **[https://customer-activation-analytics-doswappppyzzduxxhwrd8gux.streamlit.app/](https://customer-activation-analytics-doswappppyzzduxxhwrd8gux.streamlit.app/)**
-
-## System Workflow
-
-![Architecture Flowchart](https://github.com/user-attachments/assets/826c12e6-19df-43ce-a087-6034a62f4184)
-*Complete system architecture: data pipeline, AI risk scoring, CRM integration, and analytics dashboard.*
-
-> **Ingest → Analyze → Segment → Automate → Retain**
-
-
-<img width="1072" height="240" alt="image" src="https://github.com/user-attachments/assets/82cc22a4-b909-4b18-99d8-32d00bd5f74c" />
-
-Activate and retain customers by combining AI-powered analytics, modern data stack, and live CRM workflows. Identify at-risk customers, automate personalized outreach, and recover revenue with actionable insights.
-
-## Dashboard Preview
-
-### Main Analytics Dashboard
-![Dashboard Screenshot](https://github.com/user-attachments/assets/1059414a-4d24-4eec-abde-026ff2703840)
-*Monitor customer segments, risk scores, and campaign impact.*
-
-### Customer 360° Analytics  
-![Customer 360 Screenshot](https://github.com/user-attachments/assets/12c492e1-c2ea-49b9-911b-a5c56b18a335)
-*Deep behavioral analysis for individual customers.*
-
-### AI Risk Scoring & Messaging
-![AI Analysis Screenshot](https://github.com/user-attachments/assets/3f43f08a-b163-4940-9722-2bc73bc8c34a)
-*GPT-4 powered risk assessment and outreach recommendations.*
-
-## Key Features
-
-- **Customer Risk Scoring** - AI-powered analysis (OpenAI GPT-4) to identify churn risk
-- **Real-time Segmentation** - Dynamic customer segmentation and campaign targeting
-- **Automated CRM Workflows** - Salesforce API integration for lead/task creation
-- **Personalized Messaging** - AI-generated outreach content for every segment
-- **Data Quality Testing** - Automated validation with dbt models
-- **Interactive Dashboard** - Streamlit analytics with executive-ready charts
-- **Pipeline Orchestration** - Daily scheduling and error handling with Airflow
-- **Comprehensive Logging** - Data pipeline and CRM event tracking
-
-## Quick Start
-
-```bash
-# Clone and setup
-git clone https://github.com/akhilesh360/customer-activation-analytics.git
-cd customer-activation-analytics
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Build and run dashboard
-make build
-streamlit run dashboard.py
-```
-
-Open `http://localhost:8501` to explore the dashboard.
-
-## How It Works
-
-The platform combines:
-- **dbt models** for data transformation and quality checks
-- **DuckDB** for fast, local data warehousing
-- **OpenAI GPT-4** for risk scoring and automated messaging
-- **Salesforce API** for live CRM automation (leads, tasks, pipeline)
-- **Apache Airflow** for daily pipeline orchestration
-- **Streamlit** for interactive analytics dashboards
-
-## Tech Stack
-
-### Core Technologies
-- **Python 3.10+** - Backend language
-- **dbt 1.9.4** - Data modeling & testing
-- **DuckDB** - Analytical database engine
-- **OpenAI GPT-4** - AI/ML risk scoring and messaging
-- **Salesforce API** - CRM integration
-- **Apache Airflow** - Orchestration and error handling
-- **Streamlit** - Dashboard frontend
-
-### Key Libraries
-- **requests** - API connectivity
-- **pandas** - Data manipulation
-- **dbt-core** - Data transformation
-- **openai** - AI integration
-
-### Architecture
-- **Modular Pipeline** - Separate scripts for architecture, validation, pipeline, and dashboard
-- **Environment Configuration** - `.env` file for API keys and settings
-- **Automated Testing** - dbt data quality checks and pipeline validation
-
-## Project Structure
-
-```
-customer-activation-analytics/
-├── dashboard.py                 # Streamlit dashboard application
-├── architecture_overview.py     # System architecture script
-├── run_activation_pipeline.py   # End-to-end activation workflow
-├── validate_integrations.py     # CRM & AI API connectivity tests
-├── models/                      # dbt models for analytics pipeline
-├── airflow/                     # Airflow DAGs for orchestration
-└── screenshots/                 # Dashboard previews
-```
-
-## Contributing
-
-Pull requests welcome! For major changes, please open an issue first or contact the maintainer for enterprise deployment/customization.
-
-## License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
-## Author
-
-**Sai Akhilesh Veldi**  
-[GitHub](https://github.com/akhilesh360) • [LinkedIn](https://www.linkedin.com/in/saiakhileshveldi/) • [Portfolio](https://akhilesh360.github.io/SAIPORTFOLIO/)
+# Predictive Heat Pump Adoption
 
 ---
 
-**Built with ❤️ to help enterprises activate, retain, and grow their customer base**
+## Demo
 
+**Live Demo:** _[Add your demo link here if available]_  
 
+---
+
+## System Workflow
+
+**Ingest → Analyze → Segment → Automate → Retain**
+
+This project predicts household adoption of heat pumps using machine learning, supporting policy makers and consultants in targeting outreach and incentives. The workflow includes data ingestion, analysis, segmentation, automation, and retention strategies.
+
+---
+
+## Dashboard Preview
+
+**Main Analytics Dashboard:** _[Add dashboard screenshot or link if available]_  
+Monitor household segments, adoption likelihood, and campaign impact.
+
+---
+
+## Key Features
+- Predictive modeling for heat pump adoption
+- Multiple models: Logistic Regression, Random Forest, XGBoost
+- Fairness analysis across demographic and regional groups
+- SHAP-based feature importance and explainability
+- Modular, production-ready codebase
+- Jupyter notebooks for exploration and demonstration
+- Docker and Makefile for reproducible environment
+
+---
+
+## Technologies & Libraries
+- **Python 3.10+**
+- **scikit-learn**
+- **XGBoost**
+- **SHAP**
+- **pandas, numpy**
+- **matplotlib**
+- **Docker**
+- **Jupyter Notebooks**
+- **joblib**
+
+---
+
+## Project Structure
+```
+predictive-heatpump-adoption/
+├── src/                # Source code (models, preprocessing, evaluation, utils)
+├── notebooks/          # Jupyter notebooks (EDA, model demo, comparison)
+├── data/               # Synthetic and scored datasets
+├── outputs/            # Model artifacts, metrics, plots (excluded from git)
+├── config/             # Configuration files
+├── docs/               # Policy brief and documentation
+├── Dockerfile          # Containerization setup
+├── Makefile            # Automation commands
+├── requirements.txt    # Python dependencies
+├── README.md           # Project overview and instructions
+├── run_compare.py      # Script for model comparison
+├── run_pipeline.py     # Main pipeline script
+```
+
+---
+
+## About the Dataset
+
+Synthetic dataset with household, housing, and utility features. Key columns: income, region, DAC status, housing attributes, utility data, adoption flag. Explored in `notebooks/01_exploration.ipynb`.
+
+---
+
+## Model Development Journey
+
+Started with interpretable Logistic Regression as the baseline. Advanced to Random Forest and XGBoost for improved accuracy and feature analysis. All models trained and evaluated on the same split for fair comparison.
+
+---
+
+## Train-Test Split Ratio
+
+80/20 split, stratified by target variable, for reliable generalization.
+
+---
+
+## Model Performance Evaluation
+
+Metrics: AUC, confusion matrix, classification report, ROC curves. Results in `outputs/metrics_compare.json` and `outputs/roc_compare.png`. SHAP analysis for feature importance.
+
+---
+
+## Step-by-Step Usage
+1. Clone the Repository
+   ```bash
+   git clone <repo-url>
+   cd predictive-heatpump-adoption
+   ```
+2. Set Up the Environment
+   **Option A: Python Virtual Environment**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+   **Option B: Docker**
+   ```bash
+   docker build -t heatpump .
+   docker run --rm heatpump python run_pipeline.py
+   ```
+3. Explore the Data
+   Open `notebooks/01_exploration.ipynb` in Jupyter to review the synthetic dataset, visualize distributions, and understand key features.
+4. Train and Evaluate Models
+   - Run `run_pipeline.py` to train the baseline logistic regression model and generate outputs.
+   - Run `run_compare.py` to compare Logistic Regression, Random Forest, and XGBoost models on the same data split.
+   - Outputs include:
+     - `outputs/metrics_compare.json`: AUC scores for all models
+     - `outputs/roc_compare.png`: ROC curve comparison
+     - `outputs/feature_importance.png`: Top features by importance
+5. Fairness and Explainability
+   - Fairness metrics are saved in `outputs/fairness_report.json`, showing model performance across DAC (Disadvantaged Community) and non-DAC groups, and by region.
+   - SHAP analysis and feature importances are visualized in `outputs/shap_summary_xgb.png` and `outputs/feature_importance.png`.
+6. Inspect Results and Artifacts
+   - All key metrics, plots, and model artifacts are in the `outputs/` folder.
+   - Notebooks provide step-by-step analysis, visualizations, and interpretation.
+
+---
+
+## How to Contribute
+Pull requests welcome! For major changes, please open an issue first or contact the maintainer for enterprise deployment/customization.
+
+---
+
+## License
+MIT License - see LICENSE for details.
+
+---
+
+## Author
+Sai Akhilesh Veldi  
+GitHub • LinkedIn • Portfolio
+
+Built with ❤️ to help communities adopt clean energy solutions
